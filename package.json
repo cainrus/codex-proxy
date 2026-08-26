@@ -1,0 +1,22 @@
+{
+  "name": "codex-proxy",
+  "version": "0.1.0",
+  "description": "Anthropic Messages API → OpenAI Responses API bridge in a single dependency-free TypeScript file",
+  "type": "module",
+  "license": "MIT",
+  "author": "Sergei Tarassov",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning codex-proxy.ts"
+  },
+  "keywords": [
+    "anthropic",
+    "openai",
+    "responses-api",
+    "claude-code",
+    "proxy",
+    "llm"
+  ]
+}
