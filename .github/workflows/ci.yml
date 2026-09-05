@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      # There is no test suite yet. Importing the module would start the proxy,
-      # so the gate is a parse-and-strip check: it catches broken syntax and
-      # type-stripping errors without binding a port.
-      - run: node --experimental-strip-types --check codex-proxy.ts
+      # `npm test` runs node:test over the translation layer. There is nothing
+      # to install -- the bridge has no dependencies and no build step, and the
+      # suite never opens a socket or calls the upstream API.
+      - run: npm test

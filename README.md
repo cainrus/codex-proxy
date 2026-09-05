@@ -7,7 +7,7 @@ Responses API** — run Claude Code (or any Anthropic-API client) on
 `gpt-5.6-*` models while keeping the client's own tools, skills and MCP
 servers.
 
-461 lines, zero dependencies, Node ≥ 22, no build step:
+One file, zero dependencies, Node ≥ 22, no build step:
 
 ```sh
 OPENAI_API_KEY=sk-... PORT=4001 ./codex-proxy.ts
@@ -57,6 +57,19 @@ upstream. Disable with `CODEX_CARRY_REASONING=0`.
 
 Model aliases: `codex-luna` → `gpt-5.6-luna`, `codex-sol` → `gpt-5.6-sol`,
 `codex-terra` → `gpt-5.6-terra`; any `gpt-*` name passes through unchanged.
+
+## Tests
+
+```sh
+npm test
+```
+
+The translation layer is exported from `codex-proxy.ts`, and the server only
+starts when the file is the process entry point — so `node --test` can pin
+every conversion without opening a socket or calling the upstream API. The
+streaming tests replay a recorded Responses SSE stream from
+`test/fixtures/`, re-fed at several chunk sizes to prove events that span a
+socket boundary are reassembled.
 
 ## Non-goals
 
