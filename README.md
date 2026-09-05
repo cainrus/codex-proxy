@@ -1,5 +1,7 @@
 # codex-proxy
 
+[![CI](https://github.com/cainrus/codex-proxy/actions/workflows/ci.yml/badge.svg)](https://github.com/cainrus/codex-proxy/actions/workflows/ci.yml)
+
 A single-file bridge from the **Anthropic Messages API** to the **OpenAI
 Responses API** — run Claude Code (or any Anthropic-API client) on
 `gpt-5.6-*` models while keeping the client's own tools, skills and MCP
