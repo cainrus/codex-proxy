@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # There is no test suite yet. Importing the module would start the proxy,
+      # so the gate is a parse-and-strip check: it catches broken syntax and
+      # type-stripping errors without binding a port.
+      - run: node --experimental-strip-types --check codex-proxy.ts
