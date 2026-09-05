@@ -1,0 +1,35 @@
+event: response.created
+data: {"type":"response.created","response":{"id":"resp_fixture_0001","status":"in_progress","output":[]}}
+
+event: response.output_item.done
+data: {"type":"response.output_item.done","output_index":0,"item":{"id":"rs_fixture_0001","type":"reasoning","summary":[],"encrypted_content":"ZW5jcnlwdGVkLXJlYXNvbmluZy1ibG9i"}}
+
+event: response.output_item.added
+data: {"type":"response.output_item.added","output_index":1,"item":{"id":"msg_fixture_0001","type":"message","status":"in_progress","role":"assistant","content":[]}}
+
+event: response.output_text.delta
+data: {"type":"response.output_text.delta","item_id":"msg_fixture_0001","output_index":1,"content_index":0,"delta":"Reading "}
+
+event: response.output_text.delta
+data: {"type":"response.output_text.delta","item_id":"msg_fixture_0001","output_index":1,"content_index":0,"delta":"the file."}
+
+event: response.output_item.done
+data: {"type":"response.output_item.done","output_index":1,"item":{"id":"msg_fixture_0001","type":"message","status":"completed","role":"assistant","content":[{"type":"output_text","text":"Reading the file."}]}}
+
+event: response.output_item.added
+data: {"type":"response.output_item.added","output_index":2,"item":{"id":"fc_fixture_0001","type":"function_call","status":"in_progress","call_id":"call_fixture_0001","name":"Read","arguments":""}}
+
+event: response.function_call_arguments.delta
+data: {"type":"response.function_call_arguments.delta","item_id":"fc_fixture_0001","output_index":2,"delta":"{\"file_path\":"}
+
+event: response.function_call_arguments.delta
+data: {"type":"response.function_call_arguments.delta","item_id":"fc_fixture_0001","output_index":2,"delta":"\"README.md\"}"}
+
+event: response.output_item.done
+data: {"type":"response.output_item.done","output_index":2,"item":{"id":"fc_fixture_0001","type":"function_call","status":"completed","call_id":"call_fixture_0001","name":"Read","arguments":"{\"file_path\":\"README.md\"}"}}
+
+event: response.completed
+data: {"type":"response.completed","response":{"id":"resp_fixture_0001","status":"completed","output":[{"type":"reasoning"},{"type":"message"},{"type":"function_call"}],"usage":{"input_tokens":1204,"output_tokens":48}}}
+
+data: [DONE]
+

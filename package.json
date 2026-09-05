@@ -9,7 +9,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning codex-proxy.ts"
+    "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning codex-proxy.ts",
+    "test": "node --test --experimental-strip-types --disable-warning=ExperimentalWarning test/*.test.ts"
   },
   "keywords": [
     "anthropic",
